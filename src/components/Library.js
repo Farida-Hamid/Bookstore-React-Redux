@@ -2,11 +2,11 @@ import React from "react";
 import Book from "./Book";
 
 const Library = () => {
-  const bookList = {
+  const bookList = [{
     id: 1,
     title: 'book1',
     author: 'author1',
-  };
+  }];
 
   return (
     <div>
@@ -17,4 +17,4 @@ const Library = () => {
   );
 }
 
-export default Library;
+export default Library
