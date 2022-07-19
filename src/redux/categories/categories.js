@@ -1,5 +1,5 @@
 // Action type
-const STATUS_CHECK = 'STATUS_CHECK';
+const STATUS_CHECK = 'bookstore/categories/STATUS_CHECK';
 
 // Action creator
 export const check = () => ({

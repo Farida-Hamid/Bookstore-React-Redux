@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
+import { configureStore } from 'redux';
 import booksReducer from './books/books';
 import categoriesReducer from './categories/categories';
 
-const rootStore = combineReducers({
+const rootStore = configureStore({
   book: booksReducer,
   catigory: categoriesReducer,
 });

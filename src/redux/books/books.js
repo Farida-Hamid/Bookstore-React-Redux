@@ -1,6 +1,6 @@
 // Action types
-const ADD = 'ADD';
-const REMOVE = 'REMOVE';
+const ADD = 'bookstore/books/ADD';
+const REMOVE = 'bookstore/books/REMOVE';
 
 // Action creators
 export const add = (book) => ({
