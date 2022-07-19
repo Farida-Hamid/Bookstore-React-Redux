@@ -7,11 +7,13 @@ export const check = () => ({
 });
 
 // Reducer
-export default reducer = (state = [], action) => {
-  switch(action.type){
+const categoriesReducer = (state = [], action) => {
+  switch (action.type) {
     case STATUS_CHECK:
-      return "Under construction";
+      return 'Under construction';
     default:
       return state;
   }
-}
+};
+
+export default categoriesReducer;

@@ -3,25 +3,27 @@ const ADD = 'ADD';
 const REMOVE = 'REMOVE';
 
 // Action creators
-export const add = book => ({
+export const add = (book) => ({
   type: ADD,
-  payload: book
+  payload: book,
 });
 
 export const remove = (index) => ({
   type: REMOVE,
-  payload: index
+  payload: index,
 });
 
 // Reducer
-export default reducer = (state = [], action) => {
-  switch(action.type){
+const booksReducer = (state = [], action) => {
+  switch (action.type) {
     case ADD:
       return [...state, action.payload];
     case REMOVE:
       return [...state.slice(0, action.index),
-      ...state.slice(action.index + 1), state.length];
+        ...state.slice(action.index + 1), state.length];
     default:
       return state;
   }
 };
+
+export default booksReducer;
