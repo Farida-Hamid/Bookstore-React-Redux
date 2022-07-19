@@ -2,6 +2,6 @@
 const STATUS_CHECK = 'STATUS_CHECK';
 
 // Action creator
-const check = () => ({
+export const check = () => ({
   type: STATUS_CHECK,
 });
