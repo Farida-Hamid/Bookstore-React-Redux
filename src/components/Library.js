@@ -3,17 +3,7 @@ import Book from './Book';
 import AddBook from './AddBook';
 
 const Library = () => {
-  const bookList = [{
-    id: 1,
-    title: 'book1',
-    author: 'author1',
-  },
-  {
-    id: 2,
-    title: 'book2',
-    author: 'author2',
-  },
-  ];
+  const bookList = [];
 
   return (
     <div>
