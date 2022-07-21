@@ -1,28 +1,23 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Book from './Book';
 import AddBook from './AddBook';
 
-const Library = () => {
-  const bookList = [{
-    id: 1,
-    title: 'book1',
-    author: 'author1',
-  },
-  {
-    id: 2,
-    title: 'book2',
-    author: 'author2',
-  },
-  ];
+const Library = (props) => {
+  const { bookList } = props;
 
   return (
     <div>
       {bookList.map((book) => (
-        <Book key={book.id} title={book.title} author={book.author} />
+        <Book key={book.id} title={book.title} author={book.author} id={book.id} />
       ))}
       <AddBook />
     </div>
   );
+};
+
+Library.defaultProps = {
+  books: [],
 };
 
 export default Library;

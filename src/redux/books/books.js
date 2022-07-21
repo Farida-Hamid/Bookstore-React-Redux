@@ -13,14 +13,25 @@ export const remove = (index) => ({
   payload: index,
 });
 
+const initialState = [{
+  id: 1,
+  title: 'book1',
+  author: 'author1',
+},
+{
+  id: 2,
+  title: 'book2',
+  author: 'author2',
+},
+];
+
 // Reducer
-const booksReducer = (state = [], action) => {
+const booksReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD:
       return [...state, action.payload];
     case REMOVE:
-      return [...state.slice(0, action.index),
-        ...state.slice(action.index + 1), state.length];
+      return [...state.filter((item) => item.id !== action.payload)];
     default:
       return state;
   }
