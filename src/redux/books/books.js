@@ -30,6 +30,7 @@ const booksReducer = (state = initialState, action) => {
   console.log('initially books = ',initialState);
   switch (action.type) {
     case ADD:
+      console.log('adding', action.payload);
       return [...state, action.payload];
     case REMOVE:
       return [...state.filter((item) => item.id !== action.payload)];
