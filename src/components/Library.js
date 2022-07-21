@@ -6,11 +6,12 @@ import AddBook from './AddBook';
 
 const Library = (props) => {
   // const bookList = useSelector((state) => state);
-  const {books} = props;
+  const {bookList} = props;
+  console.log('Library recieved:', bookList);
 
   return (
     <div>
-      {books.map((book) => (
+      {bookList.map((book) => (
         <Book key={book.id} title={book.title} author={book.author} id={book.id} />
       ))}
       <AddBook />

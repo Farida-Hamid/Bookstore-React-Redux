@@ -27,6 +27,7 @@ const initialState = [{
 
 // Reducer
 const booksReducer = (state = initialState, action) => {
+  console.log('initially books = ',initialState);
   switch (action.type) {
     case ADD:
       return [...state, action.payload];
