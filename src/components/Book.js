@@ -8,17 +8,20 @@ const Book = ({ title, author, id }) => {
 
   const deleteBook = (e) => {
     e.preventDefault();
-      dispatch(remove(id));      
+    dispatch(remove(id));
   };
 
   return (
-  <div>
-    <h2>{title}</h2>
-    <h3>{author}</h3>
-    id: {id}
-    <button type="button" onClick={deleteBook} value={id}>Delete</button>
-  </div>
-);}
+    <div>
+      <h2>{title}</h2>
+      <h3>{author}</h3>
+      id:
+      {' '}
+      {id}
+      <button type="button" onClick={deleteBook} value={id}>Delete</button>
+    </div>
+  );
+};
 
 Book.propTypes = {
   title: PropTypes.string.isRequired,
