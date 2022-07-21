@@ -12,7 +12,6 @@ const AddBook = () => {
     const author = e.target.author.value;
 
     if (title && author) {
-      console.log('len=', bookList)
       dispatch(
         add({
           id: bookList.books.length + 1,

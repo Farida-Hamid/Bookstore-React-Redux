@@ -15,9 +15,7 @@ const Book = ({ title, author, id }) => {
     <div>
       <h2>{title}</h2>
       <h3>{author}</h3>
-      id:
-      {' '}
-      {id}
+      id: {id}
       <button type="button" onClick={deleteBook} value={id}>Delete</button>
     </div>
   );

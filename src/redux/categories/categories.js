@@ -10,7 +10,6 @@ export const check = () => ({
 const categoriesReducer = (state = [], action) => {
   switch (action.type) {
     case STATUS_CHECK:
-      console.log('returning');
       return 'Under construction';
     default:
       return state;
