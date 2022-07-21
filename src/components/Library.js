@@ -1,10 +1,10 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import PropTypes from 'prop-types';
 import Book from './Book';
 import AddBook from './AddBook';
 
 const Library = (props) => {
-  const {bookList} = props;
+  const { bookList } = props;
 
   return (
     <div>
@@ -18,12 +18,6 @@ const Library = (props) => {
 
 Library.defaultProps = {
   books: [],
-};
-
-Library.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.oneOfType(
-    [PropTypes.object],
-  )),
 };
 
 export default Library;

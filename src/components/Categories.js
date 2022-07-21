@@ -7,11 +7,12 @@ const Categories = ({ categories }) => {
   const dispatch = useDispatch();
 
   const showStatus = () => {
-    dispatch(check('status check'));
+    dispatch(check());
   };
   return (
     <>
-      <button type="button" onClick={() => showStatus()}>Check status</button><br />
+      <button type="button" onClick={() => showStatus()}>Check status</button>
+      <br />
       {categories}
     </>
   );
