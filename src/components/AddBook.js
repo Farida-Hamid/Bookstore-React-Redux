@@ -12,9 +12,17 @@ const AddBook = () => {
     const author = e.target.author.value;
 
     if (title && author) {
+      // Calculate the maximum id number in booklist
+      let maxID = 0;
+      for (let i = 0; i < bookList.books.length; i += 1) {
+        if (bookList.books[i].id > maxID) {
+          maxID = bookList.books[i].id;
+        }
+      }
+
       dispatch(
         add({
-          id: bookList.books.length + 1,
+          id: maxID + 1,
           title,
           author,
         }),
