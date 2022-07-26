@@ -38,7 +38,7 @@ const AddBook = () => {
   return (
     <>
       <hr />
-      <h2 id="form-title">ADD NEW BOOK</h2>
+      <h2 id="form-title" className="font1">ADD NEW BOOK</h2>
       <form onSubmit={submit}>
         <input type="text" placeholder="Title" name="title" value={state.title} onChange={read} />
         <input type="text" placeholder="Author" name="author" value={state.author} onChange={read} />
