@@ -1,6 +1,9 @@
 // Action types
 const ADD = 'bookstore/books/ADD';
 const REMOVE = 'bookstore/books/REMOVE';
+const READ = 'bookstore/books/READ';
+
+const APIURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/1fOnn2C5yMKtspS4K1tx/books';
 
 // Action creators
 export const add = (book) => ({
@@ -13,21 +16,16 @@ export const remove = (index) => ({
   payload: index,
 });
 
-const initialState = [{
-  id: 1,
-  title: 'book1',
-  author: 'author1',
-},
-{
-  id: 2,
-  title: 'book2',
-  author: 'author2',
-},
-];
+export const read = (books) => ({
+  type: READ,
+  payload: books,
+});
 
 // Reducer
-const booksReducer = (state = initialState, action) => {
+const booksReducer = (state = [], action) => {
   switch (action.type) {
+    case READ:
+      return action.payload;
     case ADD:
       return [...state, action.payload];
     case REMOVE:
@@ -35,6 +33,27 @@ const booksReducer = (state = initialState, action) => {
     default:
       return state;
   }
+};
+
+export const recieveBooks = () => async (dispatch) => {
+  console.log('recieving');
+  await fetch(APIURL)
+    .then((res) => res.json())
+    .then((books) => {
+      console.log('storing');
+
+      let bookList = [];
+      Object.keys(books).map(key => {
+        bookList.push({
+          item_id: key,
+          title: books[key][0].title,
+          author: books[key][0].author,
+          category: books[key][0].category,
+        });
+      });
+        console.log('dispstching',bookList);
+        dispatch(read(bookList));
+    });
 };
 
 export default booksReducer;
