@@ -14,11 +14,11 @@ const Book = ({ title, author, id }) => {
 
   return (
     <div className="book">
-      <h2>{title}</h2>
-      <h3>{author}</h3>
+      <h2 className="title">{title}</h2>
+      <h3 className="author">{author}</h3>
       id:
       {id}
-      <button type="button" onClick={deleteBook} value={id}>Delete</button>
+      <button className="delete" type="button" onClick={deleteBook} value={id}>Delete</button>
     </div>
   );
 };
