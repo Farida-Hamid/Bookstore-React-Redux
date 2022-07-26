@@ -23,7 +23,6 @@ export const read = (books) => ({
 
 // Reducer
 const booksReducer = (state = [], action) => {
-  console.log('action', action);
   switch (action.type) {
     case READ:
       return action.payload;
@@ -36,15 +35,13 @@ const booksReducer = (state = [], action) => {
   }
 };
 
+/* eslint-disable array-callback-return */
 export const recieveBooks = () => async (dispatch) => {
-  console.log('recieving');
   await fetch(APIURL)
     .then((res) => res.json())
     .then((books) => {
-      console.log('storing');
-
-      let bookList = [];
-      Object.keys(books).map(key => {
+      const bookList = [];
+      Object.keys(books).map((key) => {
         bookList.push({
           item_id: key,
           title: books[key][0].title,
@@ -52,13 +49,11 @@ export const recieveBooks = () => async (dispatch) => {
           category: books[key][0].category,
         });
       });
-        console.log('dispstching',bookList);
-        dispatch(read(bookList));
+      dispatch(read(bookList));
     });
 };
 
 export const sendBook = (book) => async (dispatch) => {
-  console.log('posting', JSON.stringify(book));
   await fetch(APIURL, {
     method: 'POST',
     body: JSON.stringify(book),
@@ -72,7 +67,6 @@ export const sendBook = (book) => async (dispatch) => {
 };
 
 export const removeBook = (id) => async (dispatch) => {
-  console.log('deleting', id);
   await fetch(`${APIURL}/${id}`, {
     method: 'DELETE',
     headers: {
