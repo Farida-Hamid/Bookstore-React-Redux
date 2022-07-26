@@ -71,4 +71,17 @@ export const sendBook = (book) => async (dispatch) => {
     });
 };
 
+export const removeBook = (id) => async (dispatch) => {
+  console.log('deleting', id);
+  await fetch(`${APIURL}/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then(() => {
+      dispatch(remove(id));
+    });
+};
+
 export default booksReducer;
