@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { sendBook } from '../redux/books/books';
 
 const AddBook = () => {
-  // const bookList = useSelector((state) => state.books);
   const dispatch = useDispatch();
   const [state, setState] = useState({
     title: '',
@@ -21,14 +20,11 @@ const AddBook = () => {
 
   const submit = (e) => {
     e.preventDefault();
-    // const id = bookList.length + 1;
-    // console.log('item', bookList);
-    // const id = 2;
+    const id = Math.floor(Math.random() * 10000);
 
     if (state.title && state.author && state.category) {
       const book = {
-        // item_id: 'item'+id,
-        item_id: 'item3',
+        item_id: id,
         title: state.title,
         author: state.author,
         category: state.category,
