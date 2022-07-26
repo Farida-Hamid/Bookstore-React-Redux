@@ -1,5 +1,21 @@
 body {
-  padding: 30px;
+  /* padding: 30px; */
+}
+
+header {
+  font-family: Montserrat, sans-serif;
+  display: flex;
+  align-items: baseline;
+  width: 30%;
+  justify-content: space-between;
+  color: #0290ff;
+  padding-left: 4%;
+}
+
+a {
+  text-decoration: none;
+  padding: 10%;
+  color: #121212;
 }
 
 main {
