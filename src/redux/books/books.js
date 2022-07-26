@@ -23,6 +23,7 @@ export const read = (books) => ({
 
 // Reducer
 const booksReducer = (state = [], action) => {
+  console.log('action', action);
   switch (action.type) {
     case READ:
       return action.payload;
@@ -53,6 +54,20 @@ export const recieveBooks = () => async (dispatch) => {
       });
         console.log('dispstching',bookList);
         dispatch(read(bookList));
+    });
+};
+
+export const sendBook = (book) => async (dispatch) => {
+  console.log('posting', JSON.stringify(book));
+  await fetch(APIURL, {
+    method: 'POST',
+    body: JSON.stringify(book),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then(() => {
+      dispatch(add(book));
     });
 };
 
