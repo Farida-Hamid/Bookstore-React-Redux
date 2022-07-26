@@ -28,7 +28,7 @@ const AddBook = () => {
     if (state.title && state.author && state.category) {
       const book = {
         // item_id: 'item'+id,
-        item_id: 'item6',
+        item_id: 'item3',
         title: state.title,
         author: state.author,
         category: state.category,

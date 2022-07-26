@@ -7,8 +7,7 @@ import { removeBook } from '../redux/books/books';
 const Book = ({ title, author, id }) => {
   const dispatch = useDispatch();
 
-  const deleteBook = (e) => {
-    e.preventDefault();
+  const deleteBook = () => {
     dispatch(removeBook(id));
   };
 
