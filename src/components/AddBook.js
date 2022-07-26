@@ -37,6 +37,7 @@ const AddBook = () => {
 
   return (
     <form onSubmit={submit}>
+      <hr />
       <h2>Add a book</h2>
       <input type="text" placeholder="Title" name="title" value={state.title} onChange={read} />
       <input type="text" placeholder="Author" name="author" value={state.author} onChange={read} />

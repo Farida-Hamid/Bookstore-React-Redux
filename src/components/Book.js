@@ -13,7 +13,7 @@ const Book = ({ title, author, id }) => {
   };
 
   return (
-    <div>
+    <div className="book">
       <h2>{title}</h2>
       <h3>{author}</h3>
       id:
