@@ -8,6 +8,8 @@ By building this application, I learned how to use React and Redux.
 
 ## Getting Started
 
+Access the website at [LINK](https://farida-hamid.github.io/Bookstore-React-Redux/public/index.html).
+
 ### Setup
 Open terminal and type:
 
